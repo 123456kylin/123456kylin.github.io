@@ -6,4 +6,5 @@
 * [nginx](nginx.md)
 * [MySQL](mysql.md)
 * [PHP](php.md)
+* [test](test.md)
 
