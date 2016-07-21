@@ -60,6 +60,7 @@ $users = $conn->fetchAll("SELECT * FROM jieqi_article_article where articleid=$a
 get  post数据
 
 ```
+调用Requst类
 获取get数据（第一个参数为名称，第二个为默认值）
 $request->query->get('foo'); 
 获取post数据 （第一个参数为名称，第二个为默认值） 
