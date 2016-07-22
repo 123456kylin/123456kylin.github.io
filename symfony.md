@@ -23,7 +23,8 @@ annotation 注释路由写法：
 
 必须以/**开始    以*/结束 中间为路由 
 例：  /** * @Route("/", name="homepage") */ 
-@Route()中的第一个值定义了匹配的URL，用来触发后续操作。当你没有在URL中添加程序的域名信息时（比如http://example.com），这些URL始终是相对的，并被称为路径（paths）。本例中，/路径指代程序的首页。@Route()的第二个参数（比如name=”homepage”）是可选项，设置了该路由的名字。此处这个名字并不是必须项，但以后它会非常有用，因为在链接页面时要用到 
+@Route()中的第一个值定义了匹配的URL，用来触发后续操作。当你没有在URL中添加程序的域名信息时（比如http://example.com），这些URL始终是相对的，并被称为路径（paths）。
+本例中，/路径指代程序的首页。@Route()的第二个参数（比如name=”homepage”）是可选项，设置了该路由的名字。此处这个名字并不是必须项，但以后它会非常有用，因为在链接页面时要用到 
 
 ```
 
@@ -44,7 +45,7 @@ $this->render（）调用渲染模板函数
 ```
 {{ path('name')}}   name为路由名称(和注释路由中的路由名字一致)
 
- {{ asset('css/blog.css') }}     包容资源asset
+ {{ asset('css/blog.css') }}     包容资源asset函数
 ```
 
 数据库链接
@@ -65,4 +66,10 @@ get  post数据
 $request->query->get('foo'); 
 获取post数据 （第一个参数为名称，第二个为默认值） 
 $request->request->get('bar', 'default value if bar does not exist');
+```
+
+function
+
+```
+$this->generateUrl   获取url
 ```
