@@ -1,7 +1,8 @@
-#symfony
+# symfony
 
 安装symfony
-```  
+
+```
 下载symfony
  c:\> php -r "file_put_contents('symfony',file_get_contents('https://symfony.com/installer'));" 
 
@@ -17,7 +18,9 @@ php bin/console generate:bundle  创建一个bundle
 php bin/console generate:controller 创建controller
 
 ```
+
 symfony写法
+
 ```
 annotation 注释路由写法：
 
@@ -29,6 +32,7 @@ annotation 注释路由写法：
 ```
 
 twig
+
 ```
 twig 可以是任意类型的内容文件
 
@@ -38,10 +42,20 @@ twig 可以是任意类型的内容文件
 
 $this->render（）调用渲染模板函数
 
-{{ include('ads/banner.html.twig') }}     {{include（‘’）}} 嵌套模板 
+在模板中显示二维数组的结果
+$this->render("xxxx.html.twig",array('name' => $user))
+{{% for value in name%}}
+<li>{{ value.id}} </li>
+<li>{{ value.name}}</li>
+...
+{{ endfor}}
+
+{{include（‘’）}} 嵌套模板
+{{ include('ads/banner.html.twig') }}     
 ```
 
 创建不同链接页面
+
 ```
 {{ path('name')}}   name为路由名称(和注释路由中的路由名字一致)
 
@@ -62,6 +76,7 @@ get  post数据
 
 ```
 调用Requst类
+public function indexAction(Request $request)
 获取get数据（第一个参数为名称，第二个为默认值）
 $request->query->get('foo'); 
 获取post数据 （第一个参数为名称，第二个为默认值） 
@@ -72,4 +87,27 @@ function
 
 ```
 $this->generateUrl   获取url
+```
+
+管理session
+
+```
+public function indexAction(Request $request)
+$session = $request->getSession()  获取session
+// store an attribute for reuse during a later user request
+$session->set('foo', 'bar');
+// get the attribute set by another controller in another request
+$foobar = $session->get('foobar');
+// use a default value if the attribute doesn't exist
+$filters = $session->get('filters', array());
+```
+
+管理cookie
+
+```
+   Cookie是不可跨域名的。域名www.google.com颁发的Cookie不会被提交到域名www.baidu.com去。这是由Cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的Cookie。 
+
+，只需要新建一个同名的Cookie，并将maxAge设置为0，并添加到response中覆盖原来的Cookie。注意是0而不是负数。负数代表其他的意义。读者可以通过上例的程序进行验证，设置不同的属性。
+
+注意：修改、删除Cookie时，新建的Cookie除value、maxAge之外的所有属性，例如name、path、domain等，都要与原Cookie完全一样。否则，浏览器将视为两个不同的Cookie不予覆盖，导致修改、删除失败。
 ```
