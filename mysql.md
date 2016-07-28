@@ -30,3 +30,33 @@ join  根据两个或多个表查询数据
 ```
 SELECT Persons.LastName, Persons.FirstName, Orders.OrderNo FROM Persons, Orders WHERE Persons.Id_P = Orders.Id_P      查询谁订购了产品，订购了什么产品
 ```
+unique 约束 唯一标识
+
+truncate table tablename  删除表中数据
+drop table tablename   删除表 
+
+复制表结构及数据到新表
+```
+create table new_tablename select * from old_tablename
+```
+
+复制表结构到新表
+```
+create table new_tablename like old_table
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
