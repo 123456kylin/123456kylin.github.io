@@ -22,3 +22,15 @@ var_dump($_FILES);
 move_uploaded_file($_FILES['fname']['tmp_name'],"F:/".$_FILES['fname']['name']);
 
 ```
+
+PDO数据库写法
+```
+采用预处理占位写法
+$sql = <<<EOF
+select * from table_name where id=:id
+EOF;
+$stmt -> prepare($sql);
+$stmt -> bindParam(":id", $id);
+$stmt -> execute();
+
+```
