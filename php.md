@@ -16,3 +16,9 @@ sha1   计算字符串的散列,用于产生随机字符
 $stmt->errorInfo()   查看数据库语句执行错误
 ```
 
+上传文件
+```
+var_dump($_FILES);
+move_uploaded_file($_FILES['fname']['tmp_name'],"F:/".$_FILES['fname']['name']);
+
+```
