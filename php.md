@@ -1,4 +1,5 @@
 # PHP
+
 ```
 this   是指向当前对象的指针
 self   是指向当前类的指针
@@ -15,10 +16,21 @@ sha1   计算字符串的散列,用于产生随机字符
 
 $stmt->errorInfo()   查看数据库语句执行错误
 
-mktime  计算得到时间戳
+time（）  计算得到当前时间戳
+
+UNIX时间戳转换为日期用函数： date() 
+一般形式：date('Y-m-d H:i:s', 1156219870) 
+
+ 日期转换为UNIX时间戳用函数：strtotime() 
+一般形式：strtotime('2010-03-24 08:15:42') 
+
+
 ```
 
+
+
 上传文件
+
 ```
 var_dump($_FILES);
 move_uploaded_file($_FILES['fname']['tmp_name'],"F:/".$_FILES['fname']['name']);
@@ -26,6 +38,7 @@ move_uploaded_file($_FILES['fname']['tmp_name'],"F:/".$_FILES['fname']['name']);
 ```
 
 PDO数据库写法
+
 ```
 采用预处理占位写法
 $sql = <<<EOF
@@ -36,3 +49,4 @@ $stmt -> bindParam(":id", $id);
 $stmt -> execute();
 
 ```
+
