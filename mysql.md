@@ -66,6 +66,13 @@ lter table 表名 change column 旧列名 新列名 新的列类型
 alter table table_name add colume_name colume_type
 ```
 
+修改主键
+```
+先删除主键  再增加主键
+alter table table_name drop primart key;
+alter table table_name add primary key(id);
+```
+
 
 
 
