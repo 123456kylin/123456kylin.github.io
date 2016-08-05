@@ -58,7 +58,7 @@ create table new_tablename like old_table
 更改列名或列的数据类型
 ```
 alter table 表名 modify column 列名 新的列的类型 
-lter table 表名 change column 旧列名 新列名 新的列类型 
+alter table 表名 change column 旧列名 新列名 新的列类型 
 ```
 
 增加字段
