@@ -7,6 +7,7 @@
 * [MySQL](mysql.md)
 * [PHP](php.md)
 * [symfony](symfony.md)
-* [抓取接口规范](抓取接口规范.md)
+* [抓取接口规范\(对外\)](抓取接口规范.md)
 * [symfony mvc](symfony-mvc.md)
+* [对外接口\(全部参数\)](对外接口全部参数.md)
 
