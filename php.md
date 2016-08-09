@@ -50,3 +50,8 @@ $stmt -> execute();
 
 ```
 
+php处理xml数据为数组
+```
+xml_parse_into_struct
+```
+
