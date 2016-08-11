@@ -27,8 +27,6 @@ UNIX时间戳转换为日期用函数： date()
 
 ```
 
-
-
 上传文件
 
 ```
@@ -51,7 +49,18 @@ $stmt -> execute();
 ```
 
 php处理xml数据为数组
+
 ```
 xml_parse_into_struct
+```
+
+php  抓取数据
+```
+ $ch = curl_init();    //初始化
+ curl_setopt($ch, CURLOPT, $url);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ curl_setopt($ch, CURLOPT_HEADER, 0);
+ $data = curl_exex($ch);   //执行操作
+ curl_close($ch);
 ```
 
