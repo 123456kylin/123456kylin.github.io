@@ -51,7 +51,44 @@ $stmt -> execute();
 php处理xml数据为数组
 
 ```
-xml_parse_into_struct
+simplexml_load_string()  把xml字符串载入对象
+例：
+ <?php
+       $data=<<<EOF
+       <data>
+       <para><note>simple note</note></para>
+       <molecule>
+               <name>Alanine</name>
+               <symbol>ala</symbol>
+               <code>A</code>
+               <type>hydrophobic</type>
+      </molecule>
+      </data>
+      EOF; 
+      $a = simplexml_load_string($data, 'SimpleXMLElement', LIBXML_NOCDATA);
+
+      var_dump(json_decode(json_encode($a),true));
+
+输出结果：
+array(2) {
+  ["para"]=>
+  array(1) {
+    ["note"]=>
+    string(11) "simple note"
+  }
+  ["molecule"]=>
+  array(4) {
+    ["name"]=>
+    string(7) "Alanine"
+    ["symbol"]=>
+    string(3) "ala"
+    ["code"]=>
+    string(1) "A"
+    ["type"]=>
+    string(11) "hydrophobic"
+  }
+}
+
 ```
 
 php  抓取数据
