@@ -1,3 +1,4 @@
+webpack前端模块打包工具
 ## 安装
 
 首先要安装 Node.js， Node.js 自带了软件包管理器 npm，Webpack 需要 Node.js v0.6 以上支持，建议使用最新版 Node.js。
