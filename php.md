@@ -96,8 +96,7 @@ array(2) {
 
 ```
 
-php  抓取数据
-
+###curl get
 ```
  $ch = curl_init();    //初始化
  curl_setopt($ch, CURLOPT, $url);
@@ -106,4 +105,30 @@ php  抓取数据
  $data = curl_exex($ch);   //执行操作
  curl_close($ch);
 ```
+
+###curl post
+```
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $BookUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_REFERER, "http://www.sina.com.cn");
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
+curl_setopt($ch, CURLOPT_ENCODING, 'UTF-8');
+curl_setopt($ch, CURLOPT_POST, 1);
+// 把post的变量加上
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+$output = curl_exec($ch);
+curl_close($ch);
+
+```
+
+####编码类型转换
+```
+mb_convert_encoding($str,$to_encoding,$from_encoding)
+参数：
+str   要编码的string
+to_encoding    str要转换成都编码
+from_encoding   str转换前的编码
+```
+
 
