@@ -72,7 +72,13 @@ alter table table_name add colume_name colume_type
 alter table table_name drop primart key;
 alter table table_name add primary key(id);
 ```
-
-
+去重(distinct)
+```
+select distinct name from test
+```
+排序
+```
+递增 asc           递减  desc
+```
 
 
