@@ -3,19 +3,24 @@ php的一个依赖工具
 
 依赖包查询网址
 ```
+
 https://packagist.org/
 ```
+
 composer中文文档
 ```
 http://docs.phpcomposer.com
 ```
+
 安装
 下载composer.phar
 ```
 curl -sS https://getcomposer.org/installer | php
 ```
+
 检查composer是否正常工作 只需要通过php来执行PHAR：
 ```
+
 php composer.phar
 ```
 
@@ -34,6 +39,7 @@ php composer.phar
 ```
 php composer.phar install
 ```
+
 执行install命令之后，会创建一个composer.lock文件到项目的根目录中
 因为 install 命令将会检查锁文件是否存在，如果存在，它将下载指定的版本（忽略 composer.json 文件中的定义）。 
 
